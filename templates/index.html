@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{{url_for('static',filename='Background.png')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            vertical-align: top;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Insurance Claim Form</h1>
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td><label for="months_as_customer">Months as Customer:</label></td>
+                    <td><input type="number" id="months_as_customer" name="months_as_customer"  required></td>
+                    <td><label for="policy_deductable">Policy Deductable:</label></td>
+                    <td><input type="number" id="policy_deductable" name="policy_deductable"  required></td>
+                </tr>
+                <tr>
+                    <td><label for="umbrella_limit">Umbrella Limit:</label></td>
+                    <td><input type="number" id="umbrella_limit" name="umbrella_limit"  required></td>
+                    <td><label for="capital_gains">Capital Gains:</label></td>
+                    <td><input type="number" id="capital_gains" name="capital_gains"  required></td>
+                </tr>
+                <tr>
+                    <td><label for="capital_loss">Capital Loss:</label></td>
+                    <td><input type="number" id="capital_loss" name="capital_loss"  required></td>
+                    <td><label for="incident_hour_of_the_day">Incident Hour of the Day:</label></td>
+                    <td><input type="number" id="incident_hour_of_the_day" name="incident_hour_of_the_day"  required></td>
+                </tr>
+                <tr>
+                    <td><label for="number_of_vehicles_involved">Number of Vehicles Involved:</label></td>
+                    <td><input type="number" id="number_of_vehicles_involved" name="number_of_vehicles_involved"  required></td>
+                    <td><label for="bodily_injuries">Bodily Injuries:</label></td>
+                    <td><input type="number" id="bodily_injuries" name="bodily_injuries"  required></td>
+                </tr>
+                <tr>
+                    <td><label for="witnesses">Witnesses:</label></td>
+                    <td><input type="number" id="witnesses" name="witnesses"  required></td>
+                    <td><label for="injury_claim">Injury Claim:</label></td>
+                    <td><input type="number" id="injury_claim" name="injury_claim"  required></td>
+                </tr>
+                <tr>
+                    <td><label for="property_claim">Property Claim:</label></td>
+                    <td><input type="number" id="property_claim" name="property_claim"  required></td>
+                    <td><label for="vehicle_claim">Vehicle Claim:</label></td>
+                    <td><input type="number" id="vehicle_claim" name="vehicle_claim"  required></td>
+                </tr>
+                <tr>
+                    <td><label for="policy_csl">Policy CSL:</label></td>
+                    <td>
+                        <select id="policy_csl" name="policy_csl" required>
+                            <option value="250/500">250/500</option>
+                            <option value="100/300">100/300</option>
+                            <option value="500/1000">500/1000</option>
+                        </select>
+                    </td>
+                    <td><label for="insured_sex">Insured Sex:</label></td>
+                    <td>
+                        <select id="insured_sex" name="insured_sex" required>
+                            <option value="MALE">MALE</option>
+                            <option value="FEMALE">FEMALE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="insured_education_level">Insured Education Level:</label></td>
+                    <td>
+                        <select id="insured_education_level" name="insured_education_level" required>
+                            <option value="MD">MD</option>
+                            <option value="PhD">PhD</option>
+                            <option value="Associate">Associate</option>
+                            <option value="Masters">Masters</option>
+                            <option value="High School">High School</option>
+                            <option value="College">College</option>
+                            <option value="JD">JD</option>
+                        </select>
+                    </td>
+                    <td><label for="insured_occupation">Insured Occupation:</label></td>
+                    <td>
+                        <select id="insured_occupation" name="insured_occupation" required>
+                            <option value="craft-repair">craft-repair</option>
+                            <option value="machine-op-inspct">machine-op-inspct</option>
+                            <option value="sales">sales</option>
+                            <option value="armed-forces">armed-forces</option>
+                            <option value="tech-support">tech-support</option>
+                            <option value="prof-specialty">prof-specialty</option>
+                            <option value="other-service">other-service</option>
+                            <option value="priv-house-serv">priv-house-serv</option>
+                            <option value="exec-managerial">exec-managerial</option>
+                            <option value="protective-serv">protective-serv</option>
+                            <option value="transport-moving">transport-moving</option>
+                            <option value="handlers-cleaners">handlers-cleaners</option>
+                            <option value="adm-clerical">adm-clerical</option>
+                            <option value="farming-fishing">farming-fishing</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="insured_relationship">Insured Relationship:</label></td>
+                    <td>
+                        <select id="insured_relationship" name="insured_relationship" required>
+                            <option value="husband">husband</option>
+                            <option value="other-relative">other-relative</option>
+                            <option value="own-child">own-child</option>
+                            <option value="unmarried">unmarried</option>
+                            <option value="wife">wife</option>
+                            <option value="not-in-family">not-in-family</option>
+                        </select>
+                    </td>
+                    <td><label for="incident_type">Incident Type:</label></td>
+                    <td>
+                        <select id="incident_type" name="incident_type" required>
+                            <option value="Single Vehicle Collision">Single Vehicle Collision</option>
+                            <option value="Vehicle Theft">Vehicle Theft</option>
+                            <option value="Multi-vehicle Collision">Multi-vehicle Collision</option>
+                            <option value="Parked Car">Parked Car</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="collision_type">Collision Type:</label></td>
+                    <td>
+                        <select id="collision_type" name="collision_type">
+                            <option value="Side Collision">Side Collision</option>
+                            <option value="NA">NA</option>
+                            <option value="Rear Collision">Rear Collision</option>
+                            <option value="Front Collision">Front Collision</option>
+                        </select>
+                    </td>
+                    <td><label for="incident_severity">Incident Severity:</label></td>
+                    <td>
+                        <select id="incident_severity" name="incident_severity" required>
+                            <option value="Major Damage">Major Damage</option>
+                            <option value="Minor Damage">Minor Damage</option>
+                            <option value="Total Loss">Total Loss</option>
+                            <option value="Trivial Damage">Trivial Damage</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="authorities_contacted">Authorities Contacted:</label></td>
+                    <td>
+                        <select id="authorities_contacted" name="authorities_contacted">
+                            <option value="Police">Police</option>
+                            <option value="NA">NA</option>
+                            <option value="Fire">Fire</option>
+                            <option value="Other">Other</option>
+                            <option value="Ambulance">Ambulance</option>
+                        </select>
+                    </td>
+                    <td><label for="property_damage">Property Damage:</label></td>
+                    <td>
+                        <select id="property_damage" name="property_damage" required>
+                            <option value="YES">YES</option>
+                            <option value="NA">NA</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="police_report_available">Police Report Available:</label></td>
+                    <td>
+                        <select id="police_report_available" name="police_report_available" required>
+                            <option value="YES">YES</option>
+                            <option value="NA">NA</option>
+                            <option value="NO">NO</option>
+                        </select>
+                    </td>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
